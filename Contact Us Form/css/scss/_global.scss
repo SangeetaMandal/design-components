@@ -7,8 +7,8 @@ body {
   padding: 0;
   margin: 0;
   @include toRem(font-size, 16);
-  font-family: var(--zsl-PrimaryFF);
-  color: var(--zsl-PrimaryFontColor);
-  font-weight: var(--zsl-LightFW);
+  font-family: var(--component-PrimaryFF);
+  color: var(--component-PrimaryFontColor);
+  font-weight: var(--component-LightFW);
   line-height: 1.4;
 }

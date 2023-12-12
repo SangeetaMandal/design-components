@@ -1,22 +1,22 @@
 @import "scss/mixins";
 @import "scss/global";
 
-.zsl-contactusform {
-  --zsl-PrimaryFF: "Montserrat", sans-serif;
-  --zsl-PrimaryBrandColor: hsl(206, 100%, 31%);
-  --zsl-SecondaryBrandColor: hsl(72, 67%, 39%);
-  --zsl-SupportingBrandColor: hsl(292, 60%, 41%);
-  --zsl-PrimaryFontColor: hsl(60, 1%, 30%);
-  --zsl-PrimaryFontColor2: hsl(60, 0%, 54%);
-  --zsl-HeadingColor: hsl(0, 0%, 20%);
-  --zsl-White: hsl(0, 0%, 100%);
-  --zsl-Black: hsl(0, 0%, 0%);
-  --zsl-Red: hsl(0, 100%, 50%);
-  --zsl-Grey: hsl(220, 27%, 98%);
-  --zsl-LightFW: 300;
-  --zsl-RegularFW: 400;
-  --zsl-SemiboldFW: 500;
-  --zsl-BoldFW: 600;
+.component-contactusform {
+  --component-PrimaryFF: "Montserrat", sans-serif;
+  --component-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --component-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --component-SupportingBrandColor: hsl(292, 60%, 41%);
+  --component-PrimaryFontColor: hsl(60, 1%, 30%);
+  --component-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --component-HeadingColor: hsl(0, 0%, 20%);
+  --component-White: hsl(0, 0%, 100%);
+  --component-Black: hsl(0, 0%, 0%);
+  --component-Red: hsl(0, 100%, 50%);
+  --component-Grey: hsl(220, 27%, 98%);
+  --component-LightFW: 300;
+  --component-RegularFW: 400;
+  --component-SemiboldFW: 500;
+  --component-BoldFW: 600;
   inline-size: 100%;
   display: flex;
   flex-direction: column;
@@ -28,9 +28,9 @@
   background-attachment: fixed;
   @include toRem(padding, 30);
   @include toRem(font-size, 16);
-  font-family: var(--zsl-PrimaryFF);
-  color: var(--zsl-PrimaryFontColor);
-  font-weight: var(--zsl-RegularFW);
+  font-family: var(--component-PrimaryFF);
+  color: var(--component-PrimaryFontColor);
+  font-weight: var(--component-RegularFW);
   line-height: 1.4;
   height: 100vh;
   display: flex;
@@ -53,7 +53,7 @@
     }
   }
   &__formwrap {
-    background: var(--zsl-White);
+    background: var(--component-White);
     box-shadow: 0px 2px 16px #777777;
     grid-column: 1/2;
     grid-row: 1/2;
@@ -85,20 +85,20 @@
   &__input,
   &__textarea {
     @include toRem(block-size, 36);
-    border: 1px solid var(--zsl-Grey);
-    background: var(--zsl-Grey);
+    border: 1px solid var(--component-Grey);
+    background: var(--component-Grey);
     @include toRem(padding, 5);
     @include toRem(border-radius, 5);
     @include toRem(font-size, 14);
     resize: none;
     inline-size: 100%;
-    color: var(--zsl-PrimaryFontColor);
-    font-weight: var(--zsl-RegularFW);
+    color: var(--component-PrimaryFontColor);
+    font-weight: var(--component-RegularFW);
     max-inline-size: 18.75rem;
     &:focus,
     &:hover,
     &:active {
-      border: 1px solid var(--zsl-PrimaryBrandColor);
+      border: 1px solid var(--component-PrimaryBrandColor);
       outline: none;
     }
   }
@@ -108,28 +108,28 @@
     max-inline-size: 100%;
   }
   &__sendbtn {
-    background-color: var(--zsl-PrimaryBrandColor);
-    color: var(--zsl-White);
+    background-color: var(--component-PrimaryBrandColor);
+    color: var(--component-White);
     @include toRem(padding-block-start, 7);
     @include toRem(padding-block-end, 5);
     @include toRem(padding-inline-start, 20);
     @include toRem(padding-inline-end, 20);
     @include toRem(border-radius, 25);
-    border: 2px solid var(--zsl-PrimaryBrandColor);
+    border: 2px solid var(--component-PrimaryBrandColor);
     cursor: pointer;
     display: inline-block;
     text-transform: uppercase;
-    font-weight: var(--zsl-RegularFW);
+    font-weight: var(--component-RegularFW);
     &:hover {
-      background-color: var(--zsl-White);
-      color: var(--zsl-PrimaryBrandColor);
+      background-color: var(--component-White);
+      color: var(--component-PrimaryBrandColor);
     }
   }
   &__infowrap {
     box-shadow: 0px 4px 16px #777777;
     grid-column: 1/2;
     grid-row: 2/3;
-    background: var(--zsl-PrimaryBrandColor);
+    background: var(--component-PrimaryBrandColor);
     @include toRem(padding, 20);
     display: flex;
     @include toRem(gap, 20);
@@ -158,21 +158,21 @@
     }
   }
   &__h1 {
-    color: var(--zsl-White);
+    color: var(--component-White);
     @include toRem(font-size, 24);
     @include toRem(padding-block-end, 10);
-    font-weight: var(--zsl-SemiboldFW);
+    font-weight: var(--component-SemiboldFW);
     &--black {
-      color: var(--zsl-Black);
+      color: var(--component-Black);
     }
   }
   &__tagline {
-    color: var(--zsl-PrimaryFontColor);
+    color: var(--component-PrimaryFontColor);
     @include toRem(font-size, 14);
     @include toRem(padding-block-end, 15);
   }
   &__infodetails {
-    color: var(--zsl-White);
+    color: var(--component-White);
     @include toRem(font-size, 14);
     line-height: 1.6;
 
@@ -194,7 +194,7 @@
   }
   &__cta {
     text-decoration: none;
-    color: var(--zsl-White);
+    color: var(--component-White);
     opacity: 1;
     @include toRem(font-size, 14);
 
