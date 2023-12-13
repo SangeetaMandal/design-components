@@ -1,0 +1,229 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-getstarted {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(60, 1%, 30%);
+  --bem-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --bem-HeadingColor: hsl(0, 0%, 20%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(220, 27%, 98%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(206, 54%, 97%);
+  @include toRem(padding, 30);
+  @include toRem(font-size, 16);
+  font-family: var(--bem-PrimaryFF);
+  color: var(--bem-PrimaryFontColor);
+  font-weight: var(--bem-RegularFW);
+  line-height: 1.4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mqmin(640px) {
+    @include toRem(padding, 100);
+  }
+
+  &__blocks {
+    background-color: hsl(249, 74%, 26%);
+    @include toRem(padding, 40);
+    @include toRem(gap, 10);
+    @include toRem(max-inline-size, 800);
+    margin: 0 auto;
+    inline-size: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    @include mqmin(640px) {
+      grid-template-columns: 0.4fr 0.3fr 0.3fr;
+      grid-template-rows: auto auto;
+    }
+  }
+  &__titlewrap {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    @include toRem(padding, 25);
+    @include toRem(padding-inline-start, 0);
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    justify-content: center;
+  }
+
+  &__pricewrap {
+    background-color: var(--bem-White);
+    grid-column: 2/3;
+    grid-row: 1/2;
+    @include toRem(padding, 15);
+    display: flex;
+    @include toRem(border-radius, 5);
+    flex-direction: column;
+  }
+
+  &__getquotewrap {
+    @include toRem(border-radius, 5);
+    background-color: var(--bem-White);
+    grid-column: 3/4;
+    grid-row: 1/2;
+    @include toRem(padding, 15);
+    display: flex;
+    flex-direction: column;
+  }
+  &__footer {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    border-top: 1px solid hsl(249, 52%, 33%);
+    @include toRem(margin-block-start, 10);
+    display: flex;
+    flex-direction: row;
+    @include toRem(padding-block-start, 20);
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__footersocialiconsul {
+    display: flex;
+    flex-direction: row;
+    @include toRem(gap, 15);
+    justify-content: center;
+    align-items: center;
+  }
+  &__letstalklogoimg,
+  &__riotlogoimg {
+    display: block;
+  }
+  &__footersocialiconsli {
+    list-style: none;
+  }
+  &__footersocialiconshyperlink {
+    text-decoration: none;
+    color: var(--bem-White);
+    @include toRem(font-size, 12);
+    font-weight: var(--bem-RegularFW);
+  }
+  &__flagicon {
+    display: block;
+  }
+  &__h1 {
+    color: var(--bem-White);
+    @include toRem(font-size, 36);
+    @include toRem(padding-block-end, 10);
+    font-weight: var(--bem-BoldFW);
+  }
+
+  &__tagline {
+    color: var(--bem-White);
+    @include toRem(font-size, 14);
+    @include toRem(padding-block-end, 15);
+  }
+
+  &__infodetails {
+    color: var(--bem-White);
+    @include toRem(font-size, 14);
+    line-height: 1.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__cta {
+    text-decoration: none;
+    color: var(--bem-White);
+    opacity: 1;
+    @include toRem(font-size, 14);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__preheading {
+    color: var(--bem-PrimaryFontColor);
+    @include toRem(font-size, 10);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--bem-RegularFW);
+    text-align: center;
+    @include toRem(margin-block-end, 20);
+  }
+  &__pricenumber {
+    color: var(--bem-Black);
+    @include toRem(font-size, 60);
+    letter-spacing: 2px;
+    font-weight: var(--bem-BoldFW);
+    text-align: center;
+    line-height: 1;
+    @include toRem(margin-block-end, 0);
+    position: relative;
+    padding: 0;
+    font-family: Impact, sans-serif;
+  }
+  &__pricesb {
+    line-height: 10px;
+    position: absolute;
+    top: 7px;
+    color: var(--bem-Black);
+    font-weight: var(--bem-BoldFW);
+    @include toRem(font-size, 24);
+    left: 18px;
+  }
+  &__priceul {
+    @include toRem(margin-inline-start, 0);
+    @include toRem(margin-block-end, 10);
+  }
+  &__priceli {
+    list-style: none;
+    background-image: url("../images/tick.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    @include toRem(padding-inline-start, 20);
+    @include toRem(font-size, 14);
+    font-weight: var(--bem-BoldFW);
+    @include toRem(padding-block-end, 10);
+  }
+  &__pricesubtext {
+    color: var(--bem-PrimaryFontColor);
+    @include toRem(font-size, 10);
+    font-weight: var(--bem-RegularFW);
+    text-align: center;
+    @include toRem(margin-block-end, 20);
+    @include toRem(margin-block-start, 5);
+  }
+  &__buttonwrap {
+    margin-top: auto;
+    display: flex;
+  }
+  &__trynowbutton {
+    color: var(--bem-White);
+    background-color: hsl(249, 61%, 50%);
+    @include toRem(font-size, 16);
+    @include toRem(padding-inline-start, 40);
+    @include toRem(padding-inline-end, 40);
+    @include toRem(padding-block-start, 7);
+    @include toRem(padding-block-end, 7);
+    font-weight: var(--bem-SemiboldFW);
+    text-align: center;
+    border-radius: 25px;
+    text-decoration: none;
+    &--white {
+      color: hsl(249, 61%, 50%);
+      background-color: hsl(220, 100%, 96%);
+    }
+  }
+  &__getaquotetext {
+    color: hsl(249, 61%, 50%);
+    text-align: center;
+    @include toRem(padding-block-start, 38.5);
+    @include toRem(padding-block-end, 38.5);
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(font-size, 16);
+  }
+}

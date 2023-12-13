@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component 36 - Shopping Cart 2</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/parallaxbanner.css">
+</head>
+
+<body>
+    <section class="bem-productdetails">
+        <div class="bem-productdetails__blocks">
+            <div class="bem-productdetails__imgslider">
+
+                <section class="bem-productdetails__parallaxbanner swiper" role="main">
+                    <div class="bem-productdetails__parallaxbannerblocks swiper-wrapper">
+                        <div class="bem-productdetails__parallaxbannerslider swiper-slide">
+                            <img src="images/product1.jpg" alt="">
+                        </div>
+                        <div class="bem-productdetails__parallaxbannerslider swiper-slide">
+                            <img src="images/product2.jpg" alt="">
+                        </div>
+                        <div class="bem-productdetails__parallaxbannerslider swiper-slide">
+                            <img src="images/product3.jpg" alt="">
+                        </div>
+                        <div class="bem-productdetails__parallaxbannerslider swiper-slide">
+                            <img src="images/product4.jpg" alt="">
+                        </div>
+
+                    </div>
+                    <div class="bem-productdetails__parallaxbanner__pagination swiper-pagination"></div>
+                </section>
+
+            </div>
+            <div class="bem-productdetails__configuration">
+                <div class="bem-productdetails__ratingreviews"><img src="images/stars.jpg" alt="Ratings"> <span>4 Reviews</span>
+                </div>
+                <h1 class="bem-productdetails__proname">Soft Magnesium</h1>
+                <h3 class="bem-productdetails__prosubname">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                    aliquam iste labore eveniet inventore!</h3>
+                <p class="bem-productdetails__procount">90 Counts</p>
+                <div class="bem-productdetails__tabdetailsdirection">
+                    <ul class="bem-productdetails__tabul">
+                        <li class="bem-productdetails__tabli active"><a class="bem-productdetails__tablihyperlinks" id="detailstab">Details</a></li>
+                        <li class="bem-productdetails__tabli"><a class="bem-productdetails__tablihyperlinks" id="directionstab">Directions</a></li>
+                    </ul>
+                    <div class="bem-productdetails__content">
+                        <div class="bem-productdetails__contents bem-productdetails__contentdetails bem-productdetails__contentsactive" id="detailscontenttab">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dignissimos sit neque
+                                adipisci? Praesentium nisi hic repellendus, nobis earum odit adipisci in numquam. Velit,
+                                dolores iusto minima ab veniam maiores placeat commodi.</p>
+                        </div>
+                        <div class="bem-productdetails__contents bem-productdetails__contentdirections" id="directionscontenttab">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dignissimos sit neque
+                                adipisci? Praesentium nisi hic repellendus, nobis earum odit adipisci in numquam. Velit,
+                                dolores iusto minima ab veniam maiores placeat commodi. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Laudantium excepturi aliquam aperiam fugit, corrupti
+                                blanditiis error, eum iusto dolorum sit quisquam. Eveniet aperiam quisquam pariatur ut
+                                soluta facilis deserunt inventore dolore architecto..</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bem-productdetails__subscribebutton">
+                    <a href="#"> Subscribe & Save 10% ($19.79) </a>
+                </div>
+                <div class="bem-productdetails__addtobagbutton">
+                    <a href="#"> $21.99 - Add to Bag -> </a>
+                </div>
+                <div class="bem-productdetails__vsf">
+                    <a href="#"> View Supplement Facts </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#detailstab").click(function(){
+            $("#detailscontenttab").show();
+            $("#directionscontenttab").hide();
+            $("#detailstab").parent().addClass('active');
+            $("#directionstab").parent().removeClass('active');
+          });
+          $("#directionstab").click(function(){
+            $("#detailscontenttab").hide();
+            $("#directionscontenttab").show();
+            $("#directionstab").parent().addClass('active');
+            $("#detailstab").parent().removeClass('active');
+          });
+        });
+        </script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".bem-productdetails__parallaxbanner", {
+            speed: 600,
+            parallax: true,
+            pagination: {
+                el: ".bem-productdetails__parallaxbanner__pagination",
+                clickable: true
+            },
+            navigation: {
+                nextEl: ".bem-productdetails__parallaxbanner__next",
+                prevEl: ".bem-productdetails__parallaxbanner__prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

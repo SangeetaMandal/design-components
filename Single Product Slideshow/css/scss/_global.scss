@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+html, body {
+  @include toRem(font-size, 16);
+  height: 100%;position: relative;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  @include toRem(font-size, 16);
+  font-family: var(--bem-PrimaryFF);
+  color: var(--bem-PrimaryFontColor);
+  font-weight: var(--bem-LightFW);
+  line-height: 1.4;
+}

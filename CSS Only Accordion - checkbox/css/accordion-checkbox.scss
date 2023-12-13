@@ -1,0 +1,92 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-accordion {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(199, 100%, 50%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(60, 1%, 38%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(0, 0%, 81%);
+  --bem-Grey2: hsl(0, 0%, 96%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+
+  @include toRem("padding", 25);
+  @include toRem("gap", 25);
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    @include toRem("font-size", 42);
+    color: var(--bem-PrimaryBrandColor);
+  }
+
+  &__tabs {
+    @include toRem("gap", 15);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    display: flex;
+    position: relative;
+    border-bottom: 0.0625rem solid hsla(0, 0%, 87%, 0.867);
+    @include toRem("padding-block-end", 10);
+    cursor: pointer;
+
+    &::after {
+      content: "+";
+      position: absolute;
+      @include toRem("inline-size", 30);
+      @include toRem("block-size", 30);
+      @include toRem("inset-inline-end", 0);
+      @include toRem("inset-block-start", 0);
+      @include toRem("font-size", 32);
+      text-align: right;
+    }
+
+  }
+
+  &__labelsize {
+    inline-size: calc(100% - 1.875rem);
+    @include toRem("font-size", 24);
+    color: var(--bem-SecondaryBrandColor);
+  }
+
+  &__checkbox:checked ~ &__label::after {
+    content: "-";
+  }
+
+  &__tabcontent {
+    display: none;
+    @include toRem("padding", 15);
+  }
+
+  &__h3 {
+    @include toRem("font-size", 20);
+    line-height: 1.3;
+    font-weight: 500;
+    @include toRem("margin-block-end", 10);
+  }
+
+  &__text {
+    @include toRem("font-size", 16);
+    line-height: 1.3;
+  }
+
+  &__checkbox:checked ~ &__tabcontent {
+    display: block;
+    background: var(--bem-Grey2);
+  }
+  
+}

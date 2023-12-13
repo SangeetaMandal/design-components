@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component 36 - Shopping Cart 2</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/parallaxbanner.css">
+</head>
+
+<body>
+    <!-- Block start here -->
+    <section class="bem-parallaxbanner swiper" role="main">
+        <div class="bem-parallaxbanner__bg parallax-bg" style="background-image: url(images/csa.png); "
+            data-swiper-parallax="-23%"></div>
+        <div class="bem-parallaxbanner__blocks swiper-wrapper">
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Portal Content Management</h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Set up mobile-responsive
+                        content
+                        with user-friendly DIY tools</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">
+                        Create a beautiful, mobile-responsive partner portal that partners can use to navigate through
+                        your
+                        channel programs and quickly find the content, campaigns and programs that they are eligible
+                        for.
+                    </p>
+                </div>
+            </div>
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Best Practices Guidebooks</h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Download a Guide</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">Learn how you can build a high
+                        performing channel by optimizing your partner training, recruitment, demand-gen and more.
+                    </p>
+                </div>
+            </div>
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Best Practices Webinars
+                    </h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Attend or Watch</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">Learn from industry analysts and
+                        ZINFI
+                        experts various aspects of Channel Marketing, Partner Management etc.
+                    </p>
+                </div>
+            </div>
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Portal Content Management</h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Set up mobile-responsive
+                        content
+                        with
+                        user-friendly DIY tools</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">
+                        Create a beautiful, mobile-responsive partner portal that partners can use to navigate through
+                        your
+                        channel programs and quickly find the content, campaigns and programs that they are eligible
+                        for.
+                    </p>
+                </div>
+            </div>
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Best Practices Guidebooks</h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Download a Guide</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">Learn how you can build a high
+                        performing
+                        channel by optimizing your partner training, recruitment, demand-gen and more.
+                    </p>
+                </div>
+            </div>
+            <div class="bem-parallaxbanner__slider swiper-slide">
+                <div class="bem-parallaxbanner__caption">
+                    <h1 class="bem-parallaxbanner__title" data-swiper-parallax="-300">Best Practices Webinars</h1>
+                    <h2 class="bem-parallaxbanner__subtitle" data-swiper-parallax="-200">Attend or Watch</h2>
+                    <p class="bem-parallaxbanner__text" data-swiper-parallax="-100">Learn from industry analysts and
+                        ZINFI
+                        experts various aspects of Channel Marketing, Partner Management etc.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bem-parallaxbanner__next swiper-button-next"></div>
+        <div class="bem-parallaxbanner__prev swiper-button-prev"></div>
+        <div class="bem-parallaxbanner__pagination swiper-pagination"></div>
+    </section>
+    <!-- Block start end -->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".bem-parallaxbanner", {
+            speed: 600,
+            parallax: true,
+            pagination: {
+                el: ".bem-parallaxbanner__pagination",
+                clickable: true
+            },
+            navigation: {
+                nextEl: ".bem-parallaxbanner__next",
+                prevEl: ".bem-parallaxbanner__prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

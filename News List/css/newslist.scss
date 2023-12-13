@@ -1,0 +1,129 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-newslist {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(0, 0%, 30%);
+  --bem-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --bem-HeadingColor: hsl(0, 0%, 20%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(0, 0%, 80%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(193, 100%, 98%);
+  @include toRem(padding, 30);
+  @include toRem(font-size, 16);
+  font-family: var(--bem-PrimaryFF);
+  color: var(--bem-PrimaryFontColor);
+  font-weight: var(--bem-LightFW);
+  line-height: 1.4;
+
+  &__blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    @include toRem(gap, 20);
+
+    @include mqmin(1001px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item {
+    @include toRem(gap, 20);
+    @include toRem(padding-block-end, 30);
+    border-bottom: 1px solid var(--bem-Grey);
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:nth-last-child(2) {
+      border-bottom: none;
+    }
+  }
+  &__itembg {
+    @include toRem(gap, 20);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    @include toRem(padding, 15);
+    background: hsl(0, 0%, 100%);
+    @include toRem(border-radius, 10);
+    @include mqmin(768px) {
+      grid-template-columns: minmax(100px, 140px) 1fr;
+    }
+    @include mqmin(1921px) {
+      grid-template-columns: minmax(140px, 200px) 1fr;
+    }
+  }
+  &__imagewrap {
+    max-inline-size: 100%;
+  }
+  &__image {
+    max-inline-size: 100%;
+    @include toRem(border-radius, 10);
+    block-size: auto;
+    display: block;
+    object-fit: cover;
+    @include mqmin(768px) {
+      @include toRem(block-size, 140);
+    }
+    @include mqmin(1921px) {
+      @include toRem(block-size, 200);
+    }
+  }
+  &__h1 {
+    color: var(--bem-HeadingColor);
+    position: relative;
+    line-height: 1.2;
+    font-weight: 600;
+    @include toRem(font-size, 34);
+    @include toRem(padding-block-end, 5);
+    @include toRem(margin-block-end, 30);
+    text-align: left;
+    border-bottom: 0.125rem solid var(--bem-Grey);
+    column-span: all;
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+  &__h2 {
+    color: var(--bem-PrimaryFontColor);
+    line-height: 1.4;
+    font-weight: 400;
+    @include toRem(font-size, 16);
+    text-align: left;
+  }
+
+  &__link {
+    color: var(--bem-HeadingColor);
+    line-height: 1.5;
+    font-weight: 500;
+    @include toRem(font-size, 16);
+    @include toRem(padding-block-start, 15);
+    @include toRem(padding-block-end, 15);
+    text-align: left;
+    text-decoration: none;
+    @include mqmin(768px) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      @include toRem(max-block-size, 116);
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+    &:hover {
+      color: var(--bem-PrimaryBrandColor);
+    }
+  }
+}

@@ -1,0 +1,225 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-shoppingcart {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(0, 0%, 30%);
+  --bem-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --bem-HeadingColor: hsl(0, 0%, 20%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Black2: hsl(0, 0%, 40%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(0, 0%, 95%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bem-White);
+  @include toRem(padding, 30);
+  @include toRem(font-size, 16);
+  font-family: var(--bem-PrimaryFF);
+  color: var(--bem-PrimaryFontColor);
+  font-weight: var(--bem-LightFW);
+  line-height: 1;
+
+  &__blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    @include toRem(max-inline-size, 800);
+    margin: 0 auto;
+    inline-size: 100%;
+    
+  }
+
+  &__item {
+    @include toRem(padding-block-start, 20);
+    @include toRem(padding-block-end, 20);
+    border-top: 0.0625rem solid var(--bem-Grey);
+    @include toRem(gap, 20);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    &:last-child {
+      border-bottom: 0.0625rem solid var(--bem-Grey);
+    }
+    @include mqmin(480px) {
+      grid-template-columns: minmax(8.75rem, auto) 1fr;
+    }
+  }
+
+  &__imagewrap {
+    max-inline-size: 100%;
+    @include toRem(border-radius, 10);
+    background: var(--bem-Grey);
+  }
+  &__image {
+    max-inline-size: 100%;
+    @include toRem(border-radius, 10);
+
+    @include mqmin(480px) {
+      @include toRem(block-size, 180);
+      @include toRem(inline-size, 180);
+      display: block;
+      object-fit: cover;
+    }
+  }
+  &__itemcontent {
+    display: grid;
+    grid-template-areas:
+      "productname productname"
+      "productcolor productprice"
+      "productsize productprice"
+      "productstock removeproduct";
+    grid-template-columns: 1fr 0.3fr;
+
+    @include mqmin(640px) {
+      grid-template-areas:
+        "productname productprice"
+        "productcolor productprice"
+        "productsize productprice"
+        "productstock removeproduct";
+    }
+  }
+  &__productname {
+    grid-area: productname;
+    text-decoration: none;
+    color: var(--bem-PrimaryBrandColor);
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(font-size, 18);
+    line-height: 1.4;
+  }
+  &__productcolor {
+    grid-area: productcolor;
+    color: var(--bem-Black2);
+    font-weight: var(--bem-SemiboldFW);
+  }
+  &__productsize {
+    grid-area: productsize;
+    color: var(--bem-Black2);
+    font-weight: var(--bem-SemiboldFW);
+  }
+  &__productstock {
+    grid-area: productstock;
+    color: var(--bem-Black2);
+    font-weight: var(--bem-SemiboldFW);
+  }
+  &__productprice {
+    grid-area: productprice;
+    justify-self: flex-end;
+    color: var(--bem-Black2);
+    font-weight: var(--bem-BoldFW);
+    @include toRem(font-size, 20);
+  }
+  &__removecta {
+    grid-area: removeproduct;
+    justify-self: flex-end;
+    color: var(--bem-PrimaryBrandColor);
+    font-weight: var(--bem-SemiboldFW);
+    align-self: flex-end;
+    text-decoration: none;
+    @include toRem(font-size, 14);
+  }
+
+
+  &__productstock {
+    display: flex;
+    align-items: center;
+    grid-area: productstock;
+    @include toRem(margin-block-start, 30);
+    align-self: flex-end;
+  }
+
+  &__icon {
+    @include toRem(inline-size, 25);
+    @include toRem(margin-inline-end, 10);
+  }
+  &__h1 {
+    color: var(--bem-HeadingColor);
+    position: relative;
+    line-height: 1.2;
+    font-weight: 600;
+    @include toRem(font-size, 26);
+    @include toRem(padding-block-end, 5);
+    @include toRem(margin-block-end, 30);
+    text-align: left;
+    column-span: all;
+    text-align: center;
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+  &__subtotal {
+    display: grid;
+    grid-template-areas:
+    "subtotalheading subtotalprice"
+    "subtotaltext subtotalprice"
+    "checkout checkout"
+    "continueshopping continueshopping";
+    grid-template-columns: 1fr 0.3fr;
+  }
+  &__subtotalheading {
+    grid-area: subtotalheading;
+    @include toRem(font-size, 22);
+    font-weight: var(--bem-SemiboldFW);
+    color: var(--bem-Black);
+    @include toRem(padding-block-end, 5);
+  }
+  &__subtotaltext {
+    grid-area: subtotaltext;
+    @include toRem(font-size, 16);
+    font-weight: var(--bem-SemiboldFW);
+  }
+  &__subtotalprice {
+    grid-area: subtotalprice;
+    justify-self: flex-end;
+    align-self: flex-end;
+    color: var(--bem-Black2);
+    font-weight: var(--bem-BoldFW);
+    @include toRem(font-size, 26);
+  }
+  &__checkout {
+    grid-area: checkout;
+    justify-self: center;
+    @include toRem(margin-block-start, 30);
+    background: var(--bem-PrimaryBrandColor);
+    color: var(--bem-White);
+    text-decoration: none;
+    inline-size: 100%;
+    //max-inline-size: 12rem;
+    text-align: center;
+    @include toRem(padding-block-start, 12);
+    @include toRem(padding-block-end, 12);
+    @include toRem(font-size, 18);
+    font-weight: var(--bem-BoldFW);
+    @include toRem(border-radius, 10);
+  }
+  &__continueshopping {
+    grid-area: continueshopping;
+    justify-self: center;
+    @include toRem(margin-block-start, 15);
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(font-size, 16);
+    line-height: 1.6;
+  }
+  &__cslink {
+    font-weight: var(--bem-SemiboldFW);
+    color: var(--bem-PrimaryBrandColor);
+    text-decoration: none;
+    @include toRem(margin-inline-start, 5);
+  }
+  &__cslinkicon {
+    @include toRem(inline-size, 20);
+    @include toRem(margin-inline-start, 5);
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

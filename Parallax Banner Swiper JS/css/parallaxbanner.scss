@@ -1,0 +1,111 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-parallaxbanner {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(0, 0%, 30%);
+  --bem-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --bem-HeadingColor: hsl(0, 0%, 20%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Black2: hsl(0, 0%, 20%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(0, 0%, 95%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+  background-color: var(--bem-Black);
+  @include toRem(font-size, 16);
+  font-family: var(--bem-PrimaryFF);
+  color: var(--bem-PrimaryFontColor);
+  font-weight: var(--bem-LightFW);
+  line-height: 1;
+  inline-size: 100%;
+  block-size: 100%;
+  box-sizing: border-box;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    @include toRem(font-size, 32);
+    color: var(--bem-PrimaryBrandColor);
+    font-weight: var(--bem-BoldFW);
+    text-align: center;
+
+    @include mqmin(640px) {
+      @include toRem(font-size, 36);
+    }
+  }
+  &__subtitle {
+    @include toRem(font-size, 18);
+    color: var(--bem-Black2);
+    font-weight: var(--bem-SemiboldFW);
+    text-align: center;
+    @include mqmin(640px) {
+      @include toRem(font-size, 24);
+    }
+  }
+  &__text {
+    @include toRem(font-size, 13);
+    color: var(--bem-Black2);
+    font-weight: var(--bem-SemiboldFW);
+    text-align: center;
+    line-height: 1.6;
+
+    @include mqmin(640px) {
+      @include toRem(font-size, 16);
+    }
+  }
+  &__slider {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  &__next,
+  &__prev {
+    color: var(--bem-PrimaryBrandColor);
+  }
+  &__prev {
+    left: 3%;
+  }
+  &__next {
+    right: 3%;
+  }
+  &__caption {
+    max-inline-size: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include toRem(gap, 15);
+  }
+}

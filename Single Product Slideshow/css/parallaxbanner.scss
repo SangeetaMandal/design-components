@@ -1,0 +1,185 @@
+@import "scss/mixins";
+@import "scss/global";
+
+.bem-productdetails {
+  --bem-PrimaryFF: "Montserrat", sans-serif;
+  --bem-PrimaryBrandColor: hsl(206, 100%, 31%);
+  --bem-SecondaryBrandColor: hsl(72, 67%, 39%);
+  --bem-SupportingBrandColor: hsl(292, 60%, 41%);
+  --bem-PrimaryFontColor: hsl(0, 0%, 30%);
+  --bem-PrimaryFontColor2: hsl(60, 0%, 54%);
+  --bem-HeadingColor: hsl(0, 0%, 20%);
+  --bem-White: hsl(0, 0%, 100%);
+  --bem-Black: hsl(0, 0%, 0%);
+  --bem-Black2: hsl(0, 0%, 20%);
+  --bem-Red: hsl(0, 100%, 50%);
+  --bem-Grey: hsl(0, 0%, 95%);
+  --bem-LightFW: 300;
+  --bem-RegularFW: 400;
+  --bem-SemiboldFW: 500;
+  --bem-BoldFW: 600;
+
+  &__blocks {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__configuration {
+    width: 43%;
+    @include toRem(padding-inline-start, 120);
+    @include toRem(padding-inline-end, 120);
+    @include toRem(padding-block-start, 30);
+    @include toRem(padding-block-end, 30);
+  }
+  &__parallaxbanner {
+    background-color: #f1f5f8;
+    line-height: 1;
+    inline-size: 100%;
+    block-size: 100%;
+    box-sizing: border-box;
+  }
+
+  &__parallaxbannerslider {
+    @include toRem(font-size, 18);
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__ratingreviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    @include toRem(padding-block-end, 15);
+    & span {
+      @include toRem(font-size, 14);
+      color: var(--bem-Black);
+      font-weight: var(--bem-RegularFW);
+    }
+  }
+  &__proname {
+    @include toRem(font-size, 34);
+    color: var(--bem-Black);
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(padding-block-end, 10);
+  }
+  &__prosubname {
+    @include toRem(font-size, 18);
+    color: var(--bem-Black);
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(padding-block-end, 5);
+  }
+  &__procount {
+    @include toRem(font-size, 16);
+    color: var(--bem-Black);
+    font-weight: var(--bem-LightFW);
+    @include toRem(padding-block-end, 20);
+  }
+  &__tabdetailsdirection {
+    @include toRem(padding-block-end, 20);
+  }
+  &__tabul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    @include toRem(margin-block-end, 15);
+  }
+  &__tabli {
+    cursor: pointer;
+
+    &.active {
+      border-bottom: 1px solid var(--bem-Black);
+    }
+  }
+  &__contents {
+    display: none;
+  }
+  &__contentsactive {
+    display: block;
+  }
+  &__tablihyperlinks {
+    text-transform: uppercase;
+    font-weight: var(--bem-SemiboldFW);
+    @include toRem(font-size, 20);
+    color: var(--bem-Black);
+  }
+  &__contents {
+    & p {
+      @include toRem(font-size, 16);
+      color: var(--bem-Black);
+      font-weight: var(--bem-RegularFW);
+    }
+  }
+  &__imgslider {
+    width: 57%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #f1f5f8;
+    @include toRem(padding-block-end, 50);
+  }
+  &__subscribebutton{
+    border: 1px solid #8299b9;
+    @include toRem(padding-block-start, 20);
+    @include toRem(padding-block-end, 20);
+    @include toRem(padding-inline-start, 20);
+    @include toRem(padding-inline-end, 20);
+    @include toRem(margin-block-end, 20);
+    text-align: center;
+    
+      & a{
+        @include toRem(font-size, 16);
+        color: #8299b9;
+        font-weight: var(--bem-SemiboldFW);
+        text-decoration: none;
+      }
+
+  }
+  &__addtobagbutton{
+    border: 1px solid #8299b9;
+    background: #8299b9;
+    @include toRem(padding-block-start, 20);
+    @include toRem(padding-block-end, 20);
+    @include toRem(padding-inline-start, 20);
+    @include toRem(padding-inline-end, 20);
+    @include toRem(margin-block-end, 20);
+    text-align: center;
+   
+    & a{
+      @include toRem(font-size, 16);
+      color: var(--bem-White);
+      font-weight: var(--bem-SemiboldFW);
+      text-decoration: none;
+    }
+  }
+  &__vsf{
+    text-align: center;
+    & a{
+      @include toRem(font-size, 14);
+      color: var(--bem-Black);
+      font-weight: var(--bem-SemiboldFW);
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 30px;
+    left: 30px;
+    width: auto
+}
